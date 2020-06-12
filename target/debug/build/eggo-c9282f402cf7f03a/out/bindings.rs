@@ -5623,6 +5623,84 @@ pub mod root {
             }
         }
         #[repr(C)]
+        pub struct Constant {
+            pub _base: root::taso::OpBase,
+        }
+        #[test]
+        fn bindgen_test_layout_Constant() {
+            assert_eq!(
+                ::std::mem::size_of::<Constant>(),
+                13856usize,
+                concat!("Size of: ", stringify!(Constant))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<Constant>(),
+                8usize,
+                concat!("Alignment of ", stringify!(Constant))
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8ConstantC1EPNS_5ModelEiPiNS_6OpTypeE"]
+            pub fn Constant_Constant(
+                this: *mut root::taso::Constant,
+                _model: *mut root::taso::Model,
+                ndim: ::std::os::raw::c_int,
+                dims: *mut ::std::os::raw::c_int,
+                _type: root::taso::OpType,
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8ConstantD1Ev"]
+            pub fn Constant_Constant_destructor(this: *mut root::taso::Constant);
+        }
+        impl Constant {
+            #[inline]
+            pub unsafe fn new(
+                _model: *mut root::taso::Model,
+                ndim: ::std::os::raw::c_int,
+                dims: *mut ::std::os::raw::c_int,
+                _type: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                Constant_Constant(__bindgen_tmp.as_mut_ptr(), _model, ndim, dims, _type);
+                __bindgen_tmp.assume_init()
+            }
+            #[inline]
+            pub unsafe fn destruct(&mut self) {
+                Constant_Constant_destructor(self)
+            }
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8Constant7forwardEb"]
+            pub fn Constant_forward(this: *mut ::std::os::raw::c_void, block: bool);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8Constant3mapEv"]
+            pub fn Constant_map(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8Constant5unmapEv"]
+            pub fn Constant_unmap(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8Constant17get_int_parameterENS_11PMParameterEPi"]
+            pub fn Constant_get_int_parameter(
+                this: *mut ::std::os::raw::c_void,
+                para: root::taso::PMParameter,
+                arg1: *mut ::std::os::raw::c_int,
+            ) -> bool;
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8Constant13collect_costsERfS1_S1_Ri"]
+            pub fn Constant_collect_costs(
+                this: *mut ::std::os::raw::c_void,
+                exe_time: *mut f32,
+                flops: *mut f32,
+                mem_acc: *mut f32,
+                num_kernels: *mut ::std::os::raw::c_int,
+            );
+        }
+        #[repr(C)]
         pub struct Conv2D {
             pub _base: root::taso::OpBase,
             pub strideH: ::std::os::raw::c_int,
@@ -6885,6 +6963,169 @@ pub mod root {
             );
         }
         #[repr(C)]
+        pub struct MergeGConv {
+            pub _base: root::taso::OpBase,
+            pub count: ::std::os::raw::c_int,
+        }
+        #[test]
+        fn bindgen_test_layout_MergeGConv() {
+            assert_eq!(
+                ::std::mem::size_of::<MergeGConv>(),
+                13864usize,
+                concat!("Size of: ", stringify!(MergeGConv))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<MergeGConv>(),
+                8usize,
+                concat!("Alignment of ", stringify!(MergeGConv))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<MergeGConv>())).count as *const _ as usize },
+                13856usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(MergeGConv),
+                    "::",
+                    stringify!(count)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConvC1EPNS_5ModelERKNS_6TensorEi"]
+            pub fn MergeGConv_MergeGConv(
+                this: *mut root::taso::MergeGConv,
+                _model: *mut root::taso::Model,
+                _weight: *const root::taso::Tensor,
+                count: ::std::os::raw::c_int,
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConvD1Ev"]
+            pub fn MergeGConv_MergeGConv_destructor(this: *mut root::taso::MergeGConv);
+        }
+        impl MergeGConv {
+            #[inline]
+            pub unsafe fn new(
+                _model: *mut root::taso::Model,
+                _weight: *const root::taso::Tensor,
+                count: ::std::os::raw::c_int,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                MergeGConv_MergeGConv(__bindgen_tmp.as_mut_ptr(), _model, _weight, count);
+                __bindgen_tmp.assume_init()
+            }
+            #[inline]
+            pub unsafe fn destruct(&mut self) {
+                MergeGConv_MergeGConv_destructor(self)
+            }
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConv17get_int_parameterENS_11PMParameterEPi"]
+            pub fn MergeGConv_get_int_parameter(
+                this: *mut ::std::os::raw::c_void,
+                para: root::taso::PMParameter,
+                arg1: *mut ::std::os::raw::c_int,
+            ) -> bool;
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConv7forwardEb"]
+            pub fn MergeGConv_forward(this: *mut ::std::os::raw::c_void, block: bool);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConv3mapEv"]
+            pub fn MergeGConv_map(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConv5unmapEv"]
+            pub fn MergeGConv_unmap(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10MergeGConv13collect_costsERfS1_S1_Ri"]
+            pub fn MergeGConv_collect_costs(
+                this: *mut ::std::os::raw::c_void,
+                exe_time: *mut f32,
+                flops: *mut f32,
+                mem_acc: *mut f32,
+                num_kernels: *mut ::std::os::raw::c_int,
+            );
+        }
+        #[repr(C)]
+        pub struct NoOp {
+            pub _base: root::taso::OpBase,
+        }
+        #[test]
+        fn bindgen_test_layout_NoOp() {
+            assert_eq!(
+                ::std::mem::size_of::<NoOp>(),
+                13856usize,
+                concat!("Size of: ", stringify!(NoOp))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<NoOp>(),
+                8usize,
+                concat!("Alignment of ", stringify!(NoOp))
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOpC1EPNS_5ModelENS_6TensorENS_6OpTypeE"]
+            pub fn NoOp_NoOp(
+                this: *mut root::taso::NoOp,
+                _model: *mut root::taso::Model,
+                _input: root::taso::Tensor,
+                _type: root::taso::OpType,
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOpD1Ev"]
+            pub fn NoOp_NoOp_destructor(this: *mut root::taso::NoOp);
+        }
+        impl NoOp {
+            #[inline]
+            pub unsafe fn new(
+                _model: *mut root::taso::Model,
+                _input: root::taso::Tensor,
+                _type: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                NoOp_NoOp(__bindgen_tmp.as_mut_ptr(), _model, _input, _type);
+                __bindgen_tmp.assume_init()
+            }
+            #[inline]
+            pub unsafe fn destruct(&mut self) {
+                NoOp_NoOp_destructor(self)
+            }
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOp17get_int_parameterENS_11PMParameterEPi"]
+            pub fn NoOp_get_int_parameter(
+                this: *mut ::std::os::raw::c_void,
+                para: root::taso::PMParameter,
+                arg1: *mut ::std::os::raw::c_int,
+            ) -> bool;
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOp7forwardEb"]
+            pub fn NoOp_forward(this: *mut ::std::os::raw::c_void, block: bool);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOp3mapEv"]
+            pub fn NoOp_map(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOp5unmapEv"]
+            pub fn NoOp_unmap(this: *mut ::std::os::raw::c_void);
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso4NoOp13collect_costsERfS1_S1_Ri"]
+            pub fn NoOp_collect_costs(
+                this: *mut ::std::os::raw::c_void,
+                exe_time: *mut f32,
+                flops: *mut f32,
+                mem_acc: *mut f32,
+                num_kernels: *mut ::std::os::raw::c_int,
+            );
+        }
+        #[repr(C)]
         pub struct Pad {
             pub _base: root::taso::OpBase,
             pub pad_before: [u64; 3usize],
@@ -7939,9 +8180,1461 @@ pub mod root {
             );
         }
         #[repr(C)]
-        #[repr(align(8))]
+        #[derive(Debug, Copy, Clone)]
+        pub struct KeyCompare {
+            pub _address: u8,
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ActivationKey {
+            pub keys: [::std::os::raw::c_int; 276usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso13ActivationKey10KEY_LENGTHE"]
+            pub static ActivationKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ActivationKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ActivationKey>(),
+                1104usize,
+                concat!("Size of: ", stringify!(ActivationKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ActivationKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ActivationKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ActivationKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ActivationKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso13ActivationKeyC1ENS_6TensorENS_6OpTypeEb"]
+            pub fn ActivationKey_ActivationKey(
+                this: *mut root::taso::ActivationKey,
+                arg1: root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: bool,
+            );
+        }
+        impl ActivationKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: bool,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ActivationKey_ActivationKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct BatchNormKey {
+            pub keys: [::std::os::raw::c_int; 274usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12BatchNormKey10KEY_LENGTHE"]
+            pub static BatchNormKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_BatchNormKey() {
+            assert_eq!(
+                ::std::mem::size_of::<BatchNormKey>(),
+                1096usize,
+                concat!("Size of: ", stringify!(BatchNormKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<BatchNormKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(BatchNormKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<BatchNormKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(BatchNormKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12BatchNormKeyC1ENS_6TensorE"]
+            pub fn BatchNormKey_BatchNormKey(
+                this: *mut root::taso::BatchNormKey,
+                arg1: root::taso::Tensor,
+            );
+        }
+        impl BatchNormKey {
+            #[inline]
+            pub unsafe fn new(arg1: root::taso::Tensor) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                BatchNormKey_BatchNormKey(__bindgen_tmp.as_mut_ptr(), arg1);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct CastKey {
+            pub keys: [::std::os::raw::c_int; 275usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7CastKey10KEY_LENGTHE"]
+            pub static CastKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_CastKey() {
+            assert_eq!(
+                ::std::mem::size_of::<CastKey>(),
+                1100usize,
+                concat!("Size of: ", stringify!(CastKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<CastKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(CastKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<CastKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(CastKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7CastKeyC1ERKNS_6TensorENS_8DataTypeE"]
+            pub fn CastKey_CastKey(
+                this: *mut root::taso::CastKey,
+                _input: *const root::taso::Tensor,
+                _datatype: root::taso::DataType,
+            );
+        }
+        impl CastKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _datatype: root::taso::DataType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                CastKey_CastKey(__bindgen_tmp.as_mut_ptr(), _input, _datatype);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ConcatKey {
+            pub keys: [::std::os::raw::c_int; 1647usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ConcatKey10KEY_LENGTHE"]
+            pub static ConcatKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ConcatKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ConcatKey>(),
+                6588usize,
+                concat!("Size of: ", stringify!(ConcatKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ConcatKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ConcatKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ConcatKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ConcatKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ConcatKeyC1EiiPNS_6TensorEPb"]
+            pub fn ConcatKey_ConcatKey(
+                this: *mut root::taso::ConcatKey,
+                arg1: ::std::os::raw::c_int,
+                arg2: ::std::os::raw::c_int,
+                arg3: *mut root::taso::Tensor,
+                arg4: *mut bool,
+            );
+        }
+        impl ConcatKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: ::std::os::raw::c_int,
+                arg2: ::std::os::raw::c_int,
+                arg3: *mut root::taso::Tensor,
+                arg4: *mut bool,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ConcatKey_ConcatKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3, arg4);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Debug, Copy, Clone)]
+        pub struct ConstantKey {
+            pub keys: [::std::os::raw::c_int; 10usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso11ConstantKey10KEY_LENGTHE"]
+            pub static ConstantKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ConstantKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ConstantKey>(),
+                40usize,
+                concat!("Size of: ", stringify!(ConstantKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ConstantKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ConstantKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ConstantKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ConstantKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso11ConstantKeyC1EiPiNS_6OpTypeE"]
+            pub fn ConstantKey_ConstantKey(
+                this: *mut root::taso::ConstantKey,
+                arg1: ::std::os::raw::c_int,
+                arg2: *mut ::std::os::raw::c_int,
+                arg3: root::taso::OpType,
+            );
+        }
+        impl ConstantKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: ::std::os::raw::c_int,
+                arg2: *mut ::std::os::raw::c_int,
+                arg3: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ConstantKey_ConstantKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct Conv2DKey {
+            pub keys: [::std::os::raw::c_int; 552usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9Conv2DKey10KEY_LENGTHE"]
+            pub static Conv2DKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_Conv2DKey() {
+            assert_eq!(
+                ::std::mem::size_of::<Conv2DKey>(),
+                2208usize,
+                concat!("Size of: ", stringify!(Conv2DKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<Conv2DKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(Conv2DKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Conv2DKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Conv2DKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9Conv2DKeyC1ENS_6TensorES1_iiNS_11PaddingModeENS_8ActiModeE"]
+            pub fn Conv2DKey_Conv2DKey(
+                this: *mut root::taso::Conv2DKey,
+                arg1: root::taso::Tensor,
+                arg2: root::taso::Tensor,
+                arg3: ::std::os::raw::c_int,
+                arg4: ::std::os::raw::c_int,
+                arg5: root::taso::PaddingMode,
+                arg6: root::taso::ActiMode,
+            );
+        }
+        impl Conv2DKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: root::taso::Tensor,
+                arg2: root::taso::Tensor,
+                arg3: ::std::os::raw::c_int,
+                arg4: ::std::os::raw::c_int,
+                arg5: root::taso::PaddingMode,
+                arg6: root::taso::ActiMode,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                Conv2DKey_Conv2DKey(
+                    __bindgen_tmp.as_mut_ptr(),
+                    arg1,
+                    arg2,
+                    arg3,
+                    arg4,
+                    arg5,
+                    arg6,
+                );
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ElementKey {
+            pub keys: [::std::os::raw::c_int; 549usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10ElementKey10KEY_LENGTHE"]
+            pub static ElementKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ElementKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ElementKey>(),
+                2196usize,
+                concat!("Size of: ", stringify!(ElementKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ElementKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ElementKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ElementKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ElementKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10ElementKeyC1ERKNS_6TensorES3_NS_6OpTypeE"]
+            pub fn ElementKey_ElementKey(
+                this: *mut root::taso::ElementKey,
+                t1: *const root::taso::Tensor,
+                t2: *const root::taso::Tensor,
+                type_: root::taso::OpType,
+            );
+        }
+        impl ElementKey {
+            #[inline]
+            pub unsafe fn new(
+                t1: *const root::taso::Tensor,
+                t2: *const root::taso::Tensor,
+                type_: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ElementKey_ElementKey(__bindgen_tmp.as_mut_ptr(), t1, t2, type_);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ElementWiseUnaryKey {
+            pub keys: [::std::os::raw::c_int; 275usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso19ElementWiseUnaryKey10KEY_LENGTHE"]
+            pub static ElementWiseUnaryKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ElementWiseUnaryKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ElementWiseUnaryKey>(),
+                1100usize,
+                concat!("Size of: ", stringify!(ElementWiseUnaryKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ElementWiseUnaryKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ElementWiseUnaryKey))
+            );
+            assert_eq!(
+                unsafe {
+                    &(*(::std::ptr::null::<ElementWiseUnaryKey>())).keys as *const _ as usize
+                },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ElementWiseUnaryKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso19ElementWiseUnaryKeyC1ERKNS_6TensorENS_6OpTypeE"]
+            pub fn ElementWiseUnaryKey_ElementWiseUnaryKey(
+                this: *mut root::taso::ElementWiseUnaryKey,
+                _input: *const root::taso::Tensor,
+                _type: root::taso::OpType,
+            );
+        }
+        impl ElementWiseUnaryKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _type: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ElementWiseUnaryKey_ElementWiseUnaryKey(__bindgen_tmp.as_mut_ptr(), _input, _type);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct EnlargeKey {
+            pub keys: [::std::os::raw::c_int; 548usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10EnlargeKey10KEY_LENGTHE"]
+            pub static EnlargeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_EnlargeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<EnlargeKey>(),
+                2192usize,
+                concat!("Size of: ", stringify!(EnlargeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<EnlargeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(EnlargeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<EnlargeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(EnlargeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10EnlargeKeyC1ENS_6TensorES1_"]
+            pub fn EnlargeKey_EnlargeKey(
+                this: *mut root::taso::EnlargeKey,
+                w1: root::taso::Tensor,
+                w2: root::taso::Tensor,
+            );
+        }
+        impl EnlargeKey {
+            #[inline]
+            pub unsafe fn new(w1: root::taso::Tensor, w2: root::taso::Tensor) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                EnlargeKey_EnlargeKey(__bindgen_tmp.as_mut_ptr(), w1, w2);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct TopKKey {
+            pub keys: [::std::os::raw::c_int; 278usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7TopKKey10KEY_LENGTHE"]
+            pub static TopKKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_TopKKey() {
+            assert_eq!(
+                ::std::mem::size_of::<TopKKey>(),
+                1112usize,
+                concat!("Size of: ", stringify!(TopKKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<TopKKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(TopKKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<TopKKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(TopKKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7TopKKeyC1ERKNS_6TensorEiibb"]
+            pub fn TopKKey_TopKKey(
+                this: *mut root::taso::TopKKey,
+                _input: *const root::taso::Tensor,
+                _axis: ::std::os::raw::c_int,
+                _numk: ::std::os::raw::c_int,
+                _largest: bool,
+                _sorted: bool,
+            );
+        }
+        impl TopKKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _axis: ::std::os::raw::c_int,
+                _numk: ::std::os::raw::c_int,
+                _largest: bool,
+                _sorted: bool,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                TopKKey_TopKKey(
+                    __bindgen_tmp.as_mut_ptr(),
+                    _input,
+                    _axis,
+                    _numk,
+                    _largest,
+                    _sorted,
+                );
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct MatmulKey {
+            pub keys: [::std::os::raw::c_int; 549usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9MatmulKey10KEY_LENGTHE"]
+            pub static MatmulKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_MatmulKey() {
+            assert_eq!(
+                ::std::mem::size_of::<MatmulKey>(),
+                2196usize,
+                concat!("Size of: ", stringify!(MatmulKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<MatmulKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(MatmulKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<MatmulKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(MatmulKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9MatmulKeyC1ENS_6TensorES1_NS_8ActiModeE"]
+            pub fn MatmulKey_MatmulKey(
+                this: *mut root::taso::MatmulKey,
+                arg1: root::taso::Tensor,
+                arg2: root::taso::Tensor,
+                arg3: root::taso::ActiMode,
+            );
+        }
+        impl MatmulKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: root::taso::Tensor,
+                arg2: root::taso::Tensor,
+                arg3: root::taso::ActiMode,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                MatmulKey_MatmulKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct MergeGConvKey {
+            pub keys: [::std::os::raw::c_int; 275usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso13MergeGConvKey10KEY_LENGTHE"]
+            pub static MergeGConvKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_MergeGConvKey() {
+            assert_eq!(
+                ::std::mem::size_of::<MergeGConvKey>(),
+                1100usize,
+                concat!("Size of: ", stringify!(MergeGConvKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<MergeGConvKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(MergeGConvKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<MergeGConvKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(MergeGConvKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso13MergeGConvKeyC1ERKNS_6TensorEi"]
+            pub fn MergeGConvKey_MergeGConvKey(
+                this: *mut root::taso::MergeGConvKey,
+                weight: *const root::taso::Tensor,
+                count: ::std::os::raw::c_int,
+            );
+        }
+        impl MergeGConvKey {
+            #[inline]
+            pub unsafe fn new(
+                weight: *const root::taso::Tensor,
+                count: ::std::os::raw::c_int,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                MergeGConvKey_MergeGConvKey(__bindgen_tmp.as_mut_ptr(), weight, count);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct MulKey {
+            pub keys: [::std::os::raw::c_int; 548usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso6MulKey10KEY_LENGTHE"]
+            pub static MulKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_MulKey() {
+            assert_eq!(
+                ::std::mem::size_of::<MulKey>(),
+                2192usize,
+                concat!("Size of: ", stringify!(MulKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<MulKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(MulKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<MulKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(MulKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso6MulKeyC1ERKNS_6TensorES3_"]
+            pub fn MulKey_MulKey(
+                this: *mut root::taso::MulKey,
+                arg1: *const root::taso::Tensor,
+                arg2: *const root::taso::Tensor,
+            );
+        }
+        impl MulKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: *const root::taso::Tensor,
+                arg2: *const root::taso::Tensor,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                MulKey_MulKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct NoopKey {
+            pub keys: [::std::os::raw::c_int; 275usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7NoopKey10KEY_LENGTHE"]
+            pub static NoopKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_NoopKey() {
+            assert_eq!(
+                ::std::mem::size_of::<NoopKey>(),
+                1100usize,
+                concat!("Size of: ", stringify!(NoopKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<NoopKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(NoopKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<NoopKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(NoopKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso7NoopKeyC1ENS_6TensorENS_6OpTypeE"]
+            pub fn NoopKey_NoopKey(
+                this: *mut root::taso::NoopKey,
+                input: root::taso::Tensor,
+                typee: root::taso::OpType,
+            );
+        }
+        impl NoopKey {
+            #[inline]
+            pub unsafe fn new(input: root::taso::Tensor, typee: root::taso::OpType) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                NoopKey_NoopKey(__bindgen_tmp.as_mut_ptr(), input, typee);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct PadKey {
+            pub keys: [::std::os::raw::c_int; 291usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso6PadKey10KEY_LENGTHE"]
+            pub static PadKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_PadKey() {
+            assert_eq!(
+                ::std::mem::size_of::<PadKey>(),
+                1164usize,
+                concat!("Size of: ", stringify!(PadKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<PadKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(PadKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<PadKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(PadKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso6PadKeyC1ERKNS_6TensorERKSt6vectorIiSaIiEES8_f"]
+            pub fn PadKey_PadKey(
+                this: *mut root::taso::PadKey,
+                _input: *const root::taso::Tensor,
+                _pad_before: *const [u64; 3usize],
+                _pad_after: *const [u64; 3usize],
+                _pad_value: f32,
+            );
+        }
+        impl PadKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _pad_before: *const [u64; 3usize],
+                _pad_after: *const [u64; 3usize],
+                _pad_value: f32,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                PadKey_PadKey(
+                    __bindgen_tmp.as_mut_ptr(),
+                    _input,
+                    _pad_before,
+                    _pad_after,
+                    _pad_value,
+                );
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct Pool2DKey {
+            pub keys: [::std::os::raw::c_int; 281usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9Pool2DKey10KEY_LENGTHE"]
+            pub static Pool2DKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_Pool2DKey() {
+            assert_eq!(
+                ::std::mem::size_of::<Pool2DKey>(),
+                1124usize,
+                concat!("Size of: ", stringify!(Pool2DKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<Pool2DKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(Pool2DKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Pool2DKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Pool2DKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9Pool2DKeyC1ENS_6TensorENS_6OpTypeEiiiiNS_11PaddingModeENS_8ActiModeE"]
+            pub fn Pool2DKey_Pool2DKey(
+                this: *mut root::taso::Pool2DKey,
+                arg1: root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: ::std::os::raw::c_int,
+                arg4: ::std::os::raw::c_int,
+                arg5: ::std::os::raw::c_int,
+                arg6: ::std::os::raw::c_int,
+                arg7: root::taso::PaddingMode,
+                arg8: root::taso::ActiMode,
+            );
+        }
+        impl Pool2DKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: ::std::os::raw::c_int,
+                arg4: ::std::os::raw::c_int,
+                arg5: ::std::os::raw::c_int,
+                arg6: ::std::os::raw::c_int,
+                arg7: root::taso::PaddingMode,
+                arg8: root::taso::ActiMode,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                Pool2DKey_Pool2DKey(
+                    __bindgen_tmp.as_mut_ptr(),
+                    arg1,
+                    arg2,
+                    arg3,
+                    arg4,
+                    arg5,
+                    arg6,
+                    arg7,
+                    arg8,
+                );
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ReduceKey {
+            pub keys: [::std::os::raw::c_int; 285usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ReduceKey10KEY_LENGTHE"]
+            pub static ReduceKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ReduceKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ReduceKey>(),
+                1140usize,
+                concat!("Size of: ", stringify!(ReduceKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ReduceKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ReduceKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ReduceKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ReduceKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ReduceKeyC1ERKNS_6TensorENS_6OpTypeERKSt6vectorIiSaIiEEb"]
+            pub fn ReduceKey_ReduceKey(
+                this: *mut root::taso::ReduceKey,
+                arg1: *const root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: *const [u64; 3usize],
+                arg4: bool,
+            );
+        }
+        impl ReduceKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: *const root::taso::Tensor,
+                arg2: root::taso::OpType,
+                arg3: *const [u64; 3usize],
+                arg4: bool,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ReduceKey_ReduceKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3, arg4);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ReshapeKey {
+            pub keys: [::std::os::raw::c_int; 283usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10ReshapeKey10KEY_LENGTHE"]
+            pub static ReshapeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ReshapeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ReshapeKey>(),
+                1132usize,
+                concat!("Size of: ", stringify!(ReshapeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ReshapeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ReshapeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ReshapeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ReshapeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10ReshapeKeyC1ENS_6TensorERKSt6vectorIiSaIiEE"]
+            pub fn ReshapeKey_ReshapeKey(
+                this: *mut root::taso::ReshapeKey,
+                arg1: root::taso::Tensor,
+                arg2: *const [u64; 3usize],
+            );
+        }
+        impl ReshapeKey {
+            #[inline]
+            pub unsafe fn new(arg1: root::taso::Tensor, arg2: *const [u64; 3usize]) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ReshapeKey_ReshapeKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ResizeKey {
+            pub keys: [::std::os::raw::c_int; 283usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ResizeKey10KEY_LENGTHE"]
+            pub static ResizeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ResizeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ResizeKey>(),
+                1132usize,
+                concat!("Size of: ", stringify!(ResizeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ResizeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ResizeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ResizeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ResizeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso9ResizeKeyC1ERKNS_6TensorERKSt6vectorIiSaIiEE"]
+            pub fn ResizeKey_ResizeKey(
+                this: *mut root::taso::ResizeKey,
+                arg1: *const root::taso::Tensor,
+                arg2: *const [u64; 3usize],
+            );
+        }
+        impl ResizeKey {
+            #[inline]
+            pub unsafe fn new(arg1: *const root::taso::Tensor, arg2: *const [u64; 3usize]) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ResizeKey_ResizeKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct ShapeKey {
+            pub keys: [::std::os::raw::c_int; 275usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8ShapeKey10KEY_LENGTHE"]
+            pub static ShapeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_ShapeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<ShapeKey>(),
+                1100usize,
+                concat!("Size of: ", stringify!(ShapeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<ShapeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(ShapeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<ShapeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(ShapeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8ShapeKeyC1ERKNS_6TensorENS_6OpTypeE"]
+            pub fn ShapeKey_ShapeKey(
+                this: *mut root::taso::ShapeKey,
+                _input: *const root::taso::Tensor,
+                _type: root::taso::OpType,
+            );
+        }
+        impl ShapeKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _type: root::taso::OpType,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                ShapeKey_ShapeKey(__bindgen_tmp.as_mut_ptr(), _input, _type);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct SliceKey {
+            pub keys: [::std::os::raw::c_int; 307usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8SliceKey10KEY_LENGTHE"]
+            pub static SliceKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_SliceKey() {
+            assert_eq!(
+                ::std::mem::size_of::<SliceKey>(),
+                1228usize,
+                concat!("Size of: ", stringify!(SliceKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<SliceKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(SliceKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<SliceKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(SliceKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8SliceKeyC1ERKNS_6TensorERKSt6vectorIiSaIiEES8_S8_S8_"]
+            pub fn SliceKey_SliceKey(
+                this: *mut root::taso::SliceKey,
+                _input: *const root::taso::Tensor,
+                _start: *const [u64; 3usize],
+                _end: *const [u64; 3usize],
+                _axes: *const [u64; 3usize],
+                _steps: *const [u64; 3usize],
+            );
+        }
+        impl SliceKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _start: *const [u64; 3usize],
+                _end: *const [u64; 3usize],
+                _axes: *const [u64; 3usize],
+                _steps: *const [u64; 3usize],
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                SliceKey_SliceKey(
+                    __bindgen_tmp.as_mut_ptr(),
+                    _input,
+                    _start,
+                    _end,
+                    _axes,
+                    _steps,
+                );
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct SqueezeKey {
+            pub keys: [::std::os::raw::c_int; 282usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10SqueezeKey10KEY_LENGTHE"]
+            pub static SqueezeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_SqueezeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<SqueezeKey>(),
+                1128usize,
+                concat!("Size of: ", stringify!(SqueezeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<SqueezeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(SqueezeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<SqueezeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(SqueezeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso10SqueezeKeyC1ERKNS_6TensorERKSt6vectorIiSaIiEE"]
+            pub fn SqueezeKey_SqueezeKey(
+                this: *mut root::taso::SqueezeKey,
+                input: *const root::taso::Tensor,
+                axes: *const [u64; 3usize],
+            );
+        }
+        impl SqueezeKey {
+            #[inline]
+            pub unsafe fn new(
+                input: *const root::taso::Tensor,
+                axes: *const [u64; 3usize],
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                SqueezeKey_SqueezeKey(__bindgen_tmp.as_mut_ptr(), input, axes);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct SplitKey {
+            pub keys: [::std::os::raw::c_int; 282usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8SplitKey10KEY_LENGTHE"]
+            pub static SplitKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_SplitKey() {
+            assert_eq!(
+                ::std::mem::size_of::<SplitKey>(),
+                1128usize,
+                concat!("Size of: ", stringify!(SplitKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<SplitKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(SplitKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<SplitKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(SplitKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8SplitKeyC1ERKNS_6TensorEiRKSt6vectorIiSaIiEE"]
+            pub fn SplitKey_SplitKey(
+                this: *mut root::taso::SplitKey,
+                _input: *const root::taso::Tensor,
+                _axis: ::std::os::raw::c_int,
+                _sizes: *const [u64; 3usize],
+            );
+        }
+        impl SplitKey {
+            #[inline]
+            pub unsafe fn new(
+                _input: *const root::taso::Tensor,
+                _axis: ::std::os::raw::c_int,
+                _sizes: *const [u64; 3usize],
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                SplitKey_SplitKey(__bindgen_tmp.as_mut_ptr(), _input, _axis, _sizes);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct TransposeKey {
+            pub keys: [::std::os::raw::c_int; 276usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12TransposeKey10KEY_LENGTHE"]
+            pub static TransposeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_TransposeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<TransposeKey>(),
+                1104usize,
+                concat!("Size of: ", stringify!(TransposeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<TransposeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(TransposeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<TransposeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(TransposeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12TransposeKeyC1ENS_6TensorERKSt6vectorIiSaIiEEb"]
+            pub fn TransposeKey_TransposeKey(
+                this: *mut root::taso::TransposeKey,
+                arg1: root::taso::Tensor,
+                arg2: *const [u64; 3usize],
+                arg3: bool,
+            );
+        }
+        impl TransposeKey {
+            #[inline]
+            pub unsafe fn new(
+                arg1: root::taso::Tensor,
+                arg2: *const [u64; 3usize],
+                arg3: bool,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                TransposeKey_TransposeKey(__bindgen_tmp.as_mut_ptr(), arg1, arg2, arg3);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct UnsqueezeKey {
+            pub keys: [::std::os::raw::c_int; 282usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12UnsqueezeKey10KEY_LENGTHE"]
+            pub static UnsqueezeKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_UnsqueezeKey() {
+            assert_eq!(
+                ::std::mem::size_of::<UnsqueezeKey>(),
+                1128usize,
+                concat!("Size of: ", stringify!(UnsqueezeKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<UnsqueezeKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(UnsqueezeKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<UnsqueezeKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(UnsqueezeKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso12UnsqueezeKeyC1ERKNS_6TensorERKSt6vectorIiSaIiEE"]
+            pub fn UnsqueezeKey_UnsqueezeKey(
+                this: *mut root::taso::UnsqueezeKey,
+                input: *const root::taso::Tensor,
+                axes: *const [u64; 3usize],
+            );
+        }
+        impl UnsqueezeKey {
+            #[inline]
+            pub unsafe fn new(
+                input: *const root::taso::Tensor,
+                axes: *const [u64; 3usize],
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                UnsqueezeKey_UnsqueezeKey(__bindgen_tmp.as_mut_ptr(), input, axes);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Copy, Clone)]
+        pub struct WhereKey {
+            pub keys: [::std::os::raw::c_int; 822usize],
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8WhereKey10KEY_LENGTHE"]
+            pub static WhereKey_KEY_LENGTH: ::std::os::raw::c_int;
+        }
+        #[test]
+        fn bindgen_test_layout_WhereKey() {
+            assert_eq!(
+                ::std::mem::size_of::<WhereKey>(),
+                3288usize,
+                concat!("Size of: ", stringify!(WhereKey))
+            );
+            assert_eq!(
+                ::std::mem::align_of::<WhereKey>(),
+                4usize,
+                concat!("Alignment of ", stringify!(WhereKey))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<WhereKey>())).keys as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(WhereKey),
+                    "::",
+                    stringify!(keys)
+                )
+            );
+        }
+        extern "C" {
+            #[link_name = "\u{1}_ZN4taso8WhereKeyC1ERKNS_6TensorES3_S3_"]
+            pub fn WhereKey_WhereKey(
+                this: *mut root::taso::WhereKey,
+                _cond: *const root::taso::Tensor,
+                _x: *const root::taso::Tensor,
+                _y: *const root::taso::Tensor,
+            );
+        }
+        impl WhereKey {
+            #[inline]
+            pub unsafe fn new(
+                _cond: *const root::taso::Tensor,
+                _x: *const root::taso::Tensor,
+                _y: *const root::taso::Tensor,
+            ) -> Self {
+                let mut __bindgen_tmp = ::std::mem::MaybeUninit::uninit();
+                WhereKey_WhereKey(__bindgen_tmp.as_mut_ptr(), _cond, _x, _y);
+                __bindgen_tmp.assume_init()
+            }
+        }
+        #[repr(C)]
+        #[derive(Debug)]
         pub struct Model {
-            pub _bindgen_opaque_blob: [u64; 169usize],
+            pub isTraining: bool,
+            pub print_cost: bool,
+            pub global_unique_id: root::size_t,
+            pub workSpaceSize: root::size_t,
+            pub workSpace: *mut ::std::os::raw::c_void,
+            pub activation: [u64; 6usize],
+            pub batchnorm: [u64; 6usize],
+            pub cast: [u64; 6usize],
+            pub concat: [u64; 6usize],
+            pub constant: [u64; 6usize],
+            pub conv2d: [u64; 6usize],
+            pub element: [u64; 6usize],
+            pub element_unary: [u64; 6usize],
+            pub enlarge: [u64; 6usize],
+            pub matmul: [u64; 6usize],
+            pub merge_gconv: [u64; 6usize],
+            pub mul: [u64; 6usize],
+            pub noop: [u64; 6usize],
+            pub pad: [u64; 6usize],
+            pub pool2d: [u64; 6usize],
+            pub reduce: [u64; 6usize],
+            pub reshape: [u64; 6usize],
+            pub resize: [u64; 6usize],
+            pub shape: [u64; 6usize],
+            pub slice: [u64; 6usize],
+            pub split: [u64; 6usize],
+            pub squeeze: [u64; 6usize],
+            pub topk: [u64; 6usize],
+            pub transpose: [u64; 6usize],
+            pub unsqueeze: [u64; 6usize],
+            pub where_: [u64; 6usize],
+            pub inputPtr: *mut root::taso::DATATYPE,
+            pub biasPtr: *mut root::taso::DATATYPE,
+            pub outputPtr: *mut root::taso::DATATYPE,
+            pub filterPtr: *mut root::taso::DATATYPE,
+            pub scalePtr: *mut root::taso::DATATYPE,
+            pub runningMean: *mut root::taso::DATATYPE,
+            pub runningVar: *mut root::taso::DATATYPE,
+            pub saveMean: *mut root::taso::DATATYPE,
+            pub saveVar: *mut root::taso::DATATYPE,
         }
         #[test]
         fn bindgen_test_layout_Model() {
@@ -7954,6 +9647,406 @@ pub mod root {
                 ::std::mem::align_of::<Model>(),
                 8usize,
                 concat!("Alignment of ", stringify!(Model))
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).isTraining as *const _ as usize },
+                0usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(isTraining)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).print_cost as *const _ as usize },
+                1usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(print_cost)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).global_unique_id as *const _ as usize },
+                8usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(global_unique_id)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).workSpaceSize as *const _ as usize },
+                16usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(workSpaceSize)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).workSpace as *const _ as usize },
+                24usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(workSpace)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).activation as *const _ as usize },
+                32usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(activation)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).batchnorm as *const _ as usize },
+                80usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(batchnorm)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).cast as *const _ as usize },
+                128usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(cast)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).concat as *const _ as usize },
+                176usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(concat)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).constant as *const _ as usize },
+                224usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(constant)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).conv2d as *const _ as usize },
+                272usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(conv2d)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).element as *const _ as usize },
+                320usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(element)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).element_unary as *const _ as usize },
+                368usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(element_unary)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).enlarge as *const _ as usize },
+                416usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(enlarge)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).matmul as *const _ as usize },
+                464usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(matmul)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).merge_gconv as *const _ as usize },
+                512usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(merge_gconv)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).mul as *const _ as usize },
+                560usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(mul)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).noop as *const _ as usize },
+                608usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(noop)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).pad as *const _ as usize },
+                656usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(pad)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).pool2d as *const _ as usize },
+                704usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(pool2d)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).reduce as *const _ as usize },
+                752usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(reduce)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).reshape as *const _ as usize },
+                800usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(reshape)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).resize as *const _ as usize },
+                848usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(resize)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).shape as *const _ as usize },
+                896usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(shape)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).slice as *const _ as usize },
+                944usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(slice)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).split as *const _ as usize },
+                992usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(split)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).squeeze as *const _ as usize },
+                1040usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(squeeze)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).topk as *const _ as usize },
+                1088usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(topk)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).transpose as *const _ as usize },
+                1136usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(transpose)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).unsqueeze as *const _ as usize },
+                1184usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(unsqueeze)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).where_ as *const _ as usize },
+                1232usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(where_)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).inputPtr as *const _ as usize },
+                1280usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(inputPtr)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).biasPtr as *const _ as usize },
+                1288usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(biasPtr)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).outputPtr as *const _ as usize },
+                1296usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(outputPtr)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).filterPtr as *const _ as usize },
+                1304usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(filterPtr)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).scalePtr as *const _ as usize },
+                1312usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(scalePtr)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).runningMean as *const _ as usize },
+                1320usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(runningMean)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).runningVar as *const _ as usize },
+                1328usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(runningVar)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).saveMean as *const _ as usize },
+                1336usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(saveMean)
+                )
+            );
+            assert_eq!(
+                unsafe { &(*(::std::ptr::null::<Model>())).saveVar as *const _ as usize },
+                1344usize,
+                concat!(
+                    "Offset of field: ",
+                    stringify!(Model),
+                    "::",
+                    stringify!(saveVar)
+                )
             );
         }
         extern "C" {
@@ -10094,6 +12187,1267 @@ pub mod root {
     }
     #[test]
     fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_56() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_57() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_58() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_59() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_60() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_61() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_62() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_63() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_64() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_65() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_66() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_67() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_68() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_int_close0_instantiation_69() {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ActivationKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ActivationKey_ptr_Activation_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_BatchNormKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_BatchNormKey_ptr_BatchNorm_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_CastKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_CastKey_ptr_Cast_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ConcatKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ConcatKey_ptr_Concat_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ConstantKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ConstantKey_ptr_Constant_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_Conv2DKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_Conv2DKey_ptr_Conv2D_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ElementKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ElementKey_ptr_Element_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ElementWiseUnaryKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ElementWiseUnaryKey_ptr_ElementWiseUnary_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_EnlargeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_EnlargeKey_ptr_Enlarge_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_MatmulKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_MatmulKey_ptr_Matmul_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_MergeGConvKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_MergeGConvKey_ptr_MergeGConv_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_MulKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_MulKey_ptr_Mul_close1_close0_instantiation()
+    {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_NoopKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_NoopKey_ptr_NoOp_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_PadKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_PadKey_ptr_Pad_close1_close0_instantiation()
+    {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_Pool2DKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_Pool2DKey_ptr_Pool2D_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ReduceKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ReduceKey_ptr_Reduce_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ReshapeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ReshapeKey_ptr_Reshape_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ResizeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ResizeKey_ptr_Resize_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_ShapeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_ShapeKey_ptr_Shape_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_SliceKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_SliceKey_ptr_Slice_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_SplitKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_SplitKey_ptr_Split_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_SqueezeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_SqueezeKey_ptr_Squeeze_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_TopKKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_TopKKey_ptr_TopK_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_TransposeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_TransposeKey_ptr_Transpose_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_UnsqueezeKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_UnsqueezeKey_ptr_Unsqueeze_close1_close0_instantiation(
+    ) {
+        assert_eq!(
+            ::std::mem::size_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::std::allocator>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::std::allocator)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_KeyCompare_open0_WhereKey_close0_instantiation() {
+        assert_eq!(
+            ::std::mem::size_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Size of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+        assert_eq!(
+            ::std::mem::align_of::<root::taso::KeyCompare>(),
+            1usize,
+            concat!(
+                "Alignment of template specialization: ",
+                stringify!(root::taso::KeyCompare)
+            )
+        );
+    }
+    #[test]
+    fn __bindgen_test_layout_allocator_open0_pair_open1_WhereKey_ptr_Where_close1_close0_instantiation(
+    ) {
         assert_eq!(
             ::std::mem::size_of::<root::std::allocator>(),
             1usize,

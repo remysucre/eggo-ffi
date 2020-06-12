@@ -9,7 +9,8 @@ fn main() {
     unsafe {
       let mut graph = root::taso::Graph::new();
       // let mut graph = root::taso::Graph::new();
-      println!("Got here");
-      println!("{}", graph.total_cost());
+      println!("{}", (*graph.model).print_cost);
+      graph.print_measurements();
+      println!("{}", (*graph.model).print_cost);
     }
 }
