@@ -16,7 +16,15 @@ fn main() {
       root::taso::Graph_Graph(&mut graph);
       // Segfaults here without the preceding line
       let input = graph.new_input(dims.len() as i32, dims.as_ptr());
-      graph.run();
+
+      let mut w = Vec::with_capacity(16);
+      w.push(1);
+      w.push(1);
+      w.push(1);
+      w.push(1);
+      let weight = graph.new_input(w.len() as i32, w.as_ptr());
+      graph.matmul(input, weight, root::taso::ActiMode_AC_MODE_NONE);
+      graph.optimize(1.0, 100, true);
       println!("{}", graph.total_cost());
     }
 }
