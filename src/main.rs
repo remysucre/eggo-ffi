@@ -7,10 +7,13 @@ include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 fn main() {
     println!("Hello, world!");
     unsafe {
+      let mut dims = Vec::with_capacity(16);
+      dims.push(1);
+      dims.push(1);
+      dims.push(1);
+      dims.push(1);
       let mut graph = root::taso::Graph::new();
-      // let mut graph = root::taso::Graph::new();
-      println!("{}", (*graph.model).print_cost);
-      graph.print_measurements();
-      println!("{}", (*graph.model).print_cost);
+      // Segfaults here
+      let input = graph.new_input(dims.len() as i32, dims.as_ptr());
     }
 }
