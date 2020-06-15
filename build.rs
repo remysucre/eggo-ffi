@@ -4,8 +4,7 @@ use std::env;
 use std::path::PathBuf;
 
 fn main() {
-    // Tell cargo to tell rustc to link the system bzip2
-    // shared library.
+    // Tell cargo to tell rustc to link the libraries.
     println!("cargo:rustc-link-search=/opt/conda/lib");
     println!("cargo:rustc-link-lib=protobuf");
     println!("cargo:rustc-link-search=/usr/local/lib");
@@ -18,13 +17,9 @@ fn main() {
     // to bindgen, and lets you build up options for
     // the resulting bindings.
     let bindings = bindgen::Builder::default()
-        // The input header we would like to generate
-        // bindings for.
-        .header("wrapper.h")
-        .clang_arg("-x")
-        .clang_arg("c++")
-        .clang_arg("-std=c++11")
         .enable_cxx_namespaces()
+        .header("wrapper.h")
+        .clang_args(&["-x", "c++", "-std=c++11"])
         .whitelist_type("taso::Graph")
         .opaque_type("std::.*")
         // Tell cargo to invalidate the built crate whenever any of the
